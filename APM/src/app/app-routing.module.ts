@@ -1,21 +1,26 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+// angular modules
+import { NgModule }              from '@angular/core';
+import { RouterModule }          from '@angular/router';
 
-import { WelcomeComponent } from './home/welcome.component';
-import { PageNotFoundComponent } from './page-not-found.component';
+// components
+import { PageNotFoundComponent } from './home/components/page-not-found/page-not-found.component';
+import { WelcomeComponent }      from './home/components/welcome/welcome.component';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-    { path: 'welcome', component: WelcomeComponent },
-    {
-        path: 'products',
-        loadChildren: () => import('./products/product.module').then(m => m.ProductModule)
-    },
-    { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-    { path: '**', component: PageNotFoundComponent }
-], { relativeLinkResolution: 'legacy' })
+      // welcome route
+      { path: 'welcome', component: WelcomeComponent },
+      // products route
+      { path: 'products', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) },
+      // default route
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      // wildcard route
+      { path: '**', component: PageNotFoundComponent }
+    ],
+    { relativeLinkResolution: 'legacy' }
+    )
   ],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

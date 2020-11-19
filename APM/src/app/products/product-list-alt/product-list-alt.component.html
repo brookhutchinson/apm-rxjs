@@ -1,23 +1,17 @@
 <div class="card">
   <div class="card-header">
-    {{pageTitle}}
-  </div>
+    {{ pageTitle }}
+  </div><!-- /.card-header -->
 
-  <div class='card-body'
-       *ngIf="products">
-    <div class='list-group'>
-      <button type='button'
-              class='list-group-item'
-              *ngFor='let product of products'
-              [ngClass]="{'active': product?.id === selectedProductId}"
-              (click)='onSelected(product.id)'>
+  <div class="card-body" *ngIf="products">
+    <div class="list-group">
+      <button class="list-group-item" type="button" *ngFor="let product of products" [ngClass]="{'active': product?.id === selectedProductId}" (click)="onSelected(product.id)">
         {{ product.productName }} ({{ product.categoryId }})
       </button>
-    </div>
-  </div>
-</div>
+    </div><!-- /.list-group -->
+  </div><!-- /.card-body -->
+</div><!-- /.card -->
 
-<div class="alert alert-danger"
-     *ngIf="errorMessage">
-  {{errorMessage}}
-</div>
+<div class="alert alert-danger" *ngIf="errorMessage">
+  {{ errorMessage }}
+</div><!-- /.alert alert-danger -->

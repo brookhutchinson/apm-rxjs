@@ -1,7 +1,7 @@
-import { ProductCategory } from './product-category';
+// interfaces
+import { ProductCategory } from './../interfaces/product-category';
 
 export class ProductCategoryData {
-
   static categories: ProductCategory[] = [
     {
       id: 1,

@@ -1,7 +1,7 @@
-import { Product } from './product';
+// interfaces
+import { Product } from './../interfaces/product';
 
 export class ProductData {
-
   static products: Product[] = [
     {
       id: 1,
